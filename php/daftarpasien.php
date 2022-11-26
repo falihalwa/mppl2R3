@@ -1,0 +1,48 @@
+<?php
+require 'function.php';
+$pasien = query("SELECT * FROM tb_pasien");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>halaman Daftar pasien</title>
+
+</head>
+<body>
+    
+<h1>Daftar pasien</h1>
+<table border ="1" cellpadding="10" cellspacing="0">
+<a href="tambahpasien.php">Tambah pasien</a>
+<tr>
+    <th>change?</th>
+    <th>Nama</th>
+    <th>ID</th>
+    <th>NIK</th>
+    <th>Gender</th>
+    <th>Age</th>
+</tr>
+<?php $i= 1; ?>
+<?php foreach($pasien as $row )  : ?>
+<tr>
+    <td>
+        <a href="ubahdatapasien.php?IDpasien= <?= $row["IDpasien"] ?>" >ubah</a>|
+        <a href="hapuspasien.php?IDpasien= <?= $row["IDpasien"] ?>" 
+        onclick= "return confirm('Anda yakin?);">hapus</a>
+    </td>
+    <td><?= $row["Nama"]; ?> </td>
+    <td><?= $row["IDpasien"]; ?></td>
+    <td href="daftarpenyakit.php?NIK= <?=$row["NIK"]?>"><?= $row["NIK"]; ?></td>
+    <td><?= $row["Kelamin"]; ?></td>
+    <td><?= $row["Usia"]; ?></td>
+
+</tr>
+<?php $i++; ?>
+<?php endforeach; ?>
+
+</table>
+
+</body>
+</html>
