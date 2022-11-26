@@ -2,6 +2,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.border-primary {
+  color: #6c5dd3 !important;
+}
+
 .kapas-text {
   font-weight: 100;
   font-size: 72px;
@@ -9,9 +13,9 @@
   color: #000000;
 }
 
-.login {
+/* .login {
   height: 100vh;
-}
+} */
 
 .login-left .profile-text {
   margin: 90px, 0, 0, 72px;
@@ -48,4 +52,12 @@
   height: 42px;
   border-radius: 4px;
   color: #ffffff;
+}
+
+.nav-active {
+  color: #6c5dd3;
+}
+
+.nav-inactive {
+  color: #b6b6b6;
 }
