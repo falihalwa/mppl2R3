@@ -4,13 +4,12 @@ require 'function.php';
 
 if(isset($_POST["login"]) ){
 
-    $uername = $_POST["username"];
+    $username = $_POST["username"];
     $password = $_POST["password"];
 
-    mysqli_query($conn, "SELECT * FROM tb_user Where username = '$username' ");
+    $result = mysqli_query($conn, "SELECT * FROM tb_user Where username = '$username' ");
 
     if( mysqli_num_rows($result) === 1){
-
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password, $row["password"]) ){
             
@@ -45,19 +44,20 @@ if(isset($_POST["login"]) ){
         <ul>
             <li>
                 <label for="username">username : </label>
-                <input type="text" name="username" id="username" required>
+                <input type="text" name="username" id="username">
             </li>
             <li>
                 <label for="password">password : </label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password">
             </li>
             <li>
-                <button type="submit" name="login">login</button>             <a  href="register.php">
-            <button>registrasi</button>
-             </a>
+                <button type="submit" name="login">login</button> 
             </li>
-            
-        
-</ul>
+    </ul>        
+</form>
+    <form action="register.php">
+    <input type="submit" value = "register">
+</form>
+
 </body>
 </html>

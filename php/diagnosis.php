@@ -48,8 +48,8 @@ if( isset($_POST["submit"]) ){
 <?php foreach($pasien as $row )  : ?>
 <tr>
     <td>
-        <a href="ubahkeluhan.php?Idkeluhan= <?= $row["Idkeluhan"] ?>" >ubah</a>|
-        <a href="hapuskeluhan.php?Idkeluhan= <?= $row["Idkeluhan"] ?>" 
+        <a href="ubahkeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" >ubah</a>|
+        <a href="hapuskeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" 
         onclick= "return confirm('Anda yakin?');">hapus</a>
     </td>
     <td><?= $row["jam"]; ?> | <?= $row["tanggal"]; ?></td>

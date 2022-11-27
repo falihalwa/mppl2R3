@@ -20,13 +20,13 @@ function query($query){
 function registrasi($data){
 	global $conn;
 
-	$usename = strtolower(stripslashes($data["username"]));
+	$username = strtolower(stripslashes($data["username"]));
 	$password = mysqli_real_escape_string($conn, $data["password"]);
 	$password1 = mysqli_real_escape_string($conn, $data["password1"]);
 	$nama = htmlspecialchars($data["nama"]);
 	$job = htmlspecialchars($data["job"]);
 
-	$result = mysqli_query($conn, "SELECT username FROM tb_user Where username = '$ussername'");
+	$result = mysqli_query($conn, "SELECT username FROM tb_user Where username = '$username'");
 	
 	if(mysqli_fetch_assoc($result) ) {
 		echo "<script> alert('username sudah terdaftar!')</script>";
@@ -42,7 +42,8 @@ function registrasi($data){
 	
 	$password = password_hash($password, PASSWORD_DEFAULT);
 	
-	mysqli_query($conn, "INSERT INTO tb_user VALUES('','password','username','nama','job')");
+	mysqli_query($conn, "INSERT INTO tb_user VALUES('','$password','$username','$nama','$job')");
+	return true;
 }
 
 
@@ -118,7 +119,7 @@ function tambahkeluhan($data){
 	$date = htmlspecialchars($data["tanggal"]);
 
 	$query = "INSERT INTO tb_penyakit
-	VALUES ('','$NIK','$TekananDarah','$beratbadan','$tinggibadan','$suhutubuh','$time','$date','','')";
+	VALUES ('','$NIK','$TekananDarah','$beratbadan','$tinggibadan','$suhutubuh','$keluhan','$time','$date','','')";
 mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 }
@@ -129,7 +130,7 @@ function diagnosis($data){
 	$resepobat = htmlspecialchars($data["resepobat"]);
 
 	$query = "INSERT INTO tb_penyakit
-	VALUES ('','','','','','','','','$diagnosis','$resepobat')";
+	VALUES ('','','','','','','','','','$diagnosis','$resepobat')";
 mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 }

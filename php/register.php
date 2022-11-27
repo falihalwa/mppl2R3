@@ -2,13 +2,11 @@
 require 'function.php';
 
 if(isset($_POST["register"]) ){
-    if( registrasi($_POST) > 0 ){
+    if( $temp = registrasi($_POST) ){
         echo"
         <script> 
-        alert( berhasil registrasi');
-        document.location.href = 'login.php';
-        </script>
-    ";
+        alert( berhasil registrasi');";
+        header("location:login.php");
 }else {
     echo mysqli_error($conn);
     }
@@ -50,7 +48,7 @@ if(isset($_POST["register"]) ){
                 <label for="job">Pekerjaan : </label>
                 <select name= "job"required>
                     <option value="">Pilih </option>
-                    <option value="Perawat">Pewarat</option>
+                    <option value="Perawat">Perawat</option>
                     <option value="Dokter">Dokter</option>
                     <option value="Apoteker">Apoteker</option>
                 </select>

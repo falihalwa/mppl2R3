@@ -45,13 +45,13 @@ if(isset($_POST["cari"]) ){
 <?php foreach($pasien as $row )  : ?>
 <tr>
     <td>
-        <a href="ubahdatapasien.php?IDpasien= <?= $row["IDpasien"] ?>" >ubah</a>|
-        <a href="hapuspasien.php?IDpasien= <?= $row["IDpasien"] ?>" 
+        <a href="ubahdatapasien.php?IDpasien=<?=$row["IDpasien"] ?>" >ubah</a>|
+        <a href="hapuspasien.php?IDpasien=<?=$row["IDpasien"] ?>" 
         onclick= "return confirm('Anda yakin?');">hapus</a>
     </td>
     <td><?= $row["Nama"]; ?> </td>
     <td><?= $row["IDpasien"]; ?></td>
-    <td><a href="daftarpenyakit.php?NIK= <?=$row["NIK"]?>"> <?= $row["NIK"]; ?></a></td>
+    <td><a href="daftarpenyakit.php?NIK=<?=$row["NIK"]?>"><?=$row["NIK"]; ?></a></td>
     <td><?= $row["Kelamin"]; ?></td>
     <td><?= $row["Usia"]; ?></td>
 

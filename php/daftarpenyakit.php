@@ -20,10 +20,10 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
 
 </head>
 <body>
-    
+        <input type="hidden" name="NIK" value="<?= $psn["NIK"]; ?>">
 <h1>Daftar Keluhan</h1>
 <table border ="1" cellpadding="10" cellspacing="0">
-
+<input type="hidden" name="NIK" value="<?= $psn["NIK"]; ?>">
 <tr>
     <th>change?</th>
     <th>watku</th>
@@ -41,12 +41,12 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
 <tr>
     <td>
         <a href="ubahkeluhan.php?Idkeluhan= <?= $row["Idkeluhan"] ?>" >ubah</a>|
-        <a href="hapuskeluhan.php?Idkeluhan= <?= $row["Idkeluhan"] ?>" 
+        <a href="hapuskeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" 
         onclick= "return confirm('Anda yakin?');">hapus</a>
     </td>
     <td><?= $row["jam"]; ?> | <?= $row["tanggal"]; ?></td>
     <td><?= $row["Idkeluhan"]; ?> </td>
-    <td><a href="diagnosis.php?Idkeluhan= <?=$row["Idkeluhan"]?>"><?= $row["keluhan"]; ?></a></td>
+    <td><a href="diagnosis.php?Idkeluhan=<?=$row["Idkeluhan"]?>"><?= $row["keluhan"]; ?></a></td>
     <td><?= $row["diagnosis"]; ?></td>
     <td><?= $row["resepobat"]; ?></td>
     <td><?= $row["TekananDarah"]; ?></td>
@@ -58,9 +58,9 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
 <?php endforeach; ?>
 
 </table>
-<li>
-            <a  href="tambahkeluhan.php">
-            <button>Tambah keluhan</button>
+        <li>
+            <a  href="tambahkeluhan.php?NIK=<?=$row["NIK"] ?>">
+            <button>tambah keluhan</button>
         </a>
 </li>
 </body>

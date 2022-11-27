@@ -7,38 +7,39 @@ if(isset ($_SESSION["login"]) ){
 
 require ('function.php');
 
-$NIK = $_GET["NIK"];
+$Idkeluhan = $_GET["Idkeluhan"];
+
+$psn = query("SELECT * FROM tb_penyakit Where Idkeluhan = $Idkeluhan")[0];
 
 if( isset($_POST["submit"]) ){
-    // if(tambahkeluhan($_POST) > 0)
-    // {
-    //     echo"
-    //         <script> 
-    //         alert('keluhan berhasil ditambahkan');
-    //         </script>
-    //     ";
-    // }else {
-    //     echo"
-    //     <script> 
-    //         alert('keluhan gagal ditambahkan');
-    //     </script>
-    //     ";
-    // }
+    if(ubahdataKeluhan($_POST) > 0)
+    {
+        echo"
+            <script> 
+            alert('Keluhan berhasil diubah');
+            document.location.href = 'daftarKeluhan.php';
+            </script>
+        ";
+    }else {
+        echo"
+        <script> 
+            alert('Keluhan gagal diubah');
+            document.location.href = 'daftarkeluhan.php';
+        </script>
+        ";
     }
-$date = date('d-m-y h:i:s');
+    }
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tambah keluhan pasien</Title>
+        <title>Ubah Data Diri pasien</Title>
 </head>
 <body>
-    <h1> Tambah data keluhan pasien</h1>
+    <h1> Ubah data test pasien</h1>
     <form action="" method="post">
-    <input type="hidden" name="NIK" value="<?=$NIK; ?>">
-    <input type="hidden" name="jam" value="date('h:i:s')">
-    <input type="hidden" name="tanggal" value="date('d-m-y')">
+    <input type="hidden" name="Idkeluhan" value="<?= $psn["Idkeluhan"]; ?>">
         <ul>
             <li>
                 <label for="TekananDarah">Tekanan darah : </label>
@@ -49,10 +50,6 @@ $date = date('d-m-y h:i:s');
                 <input type="number" name="beratbadan" id="beratbadan" required autocomplete="off">
             </li>
             <li>
-                <label for="tinggibadan">tinggi badan : </label>
-                <input type="number" name="tinggibadan" id="tinggibadan" required autocomplete="off">
-            </li>
-            <li>
                 <label for="suhutubuh">Suhu Tubuh : </label>
                 <input type="number" name="suhutubuh" id="suhutubuh" required autocomplete="off">
             </li>
@@ -61,15 +58,10 @@ $date = date('d-m-y h:i:s');
                 <label for="keluhan">Keluhan : </label>
                 <input type="text" name="keluhan" id="suhutubuh" required autocomplete="off">
             </li>
-
             <li>
                 <button type="submit" name="submit">Submit</button>
             </li>
         </ul>
-    </form> 
-    <form action="daftarpenyakit.php">
-        <input type="hidden" name="NIK" value="<?=$NIK?>" />
-        <input type="submit" value="AREP TOLOL MEMEK KONTOL">
     </form>
-    </body>
+</body>
 </html>
