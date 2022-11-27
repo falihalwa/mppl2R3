@@ -13,6 +13,42 @@ function query($query){
 	return $rows;
 }
 
+
+
+///////USER//////
+
+function registrasi($data){
+	global $conn;
+
+	$usename = strtolower(stripslashes($data["username"]));
+	$password = mysqli_real_escape_string($conn, $data["password"]);
+	$password1 = mysqli_real_escape_string($conn, $data["password1"]);
+	$nama = htmlspecialchars($data["nama"]);
+	$job = htmlspecialchars($data["job"]);
+
+	$result = mysqli_query($conn, "SELECT username FROM tb_user Where username = '$ussername'");
+	
+	if(mysqli_fetch_assoc($result) ) {
+		echo "<script> alert('username sudah terdaftar!')</script>";
+		return false;
+	}
+
+	if( $password !== $password1){
+		echo "<script>
+			alert('password konfirmasi tidak sesusai');
+		</script>";
+		return false;
+	}
+	
+	$password = password_hash($password, PASSWORD_DEFAULT);
+	
+	mysqli_query($conn, "INSERT INTO tb_user VALUES('','password','username','nama','job')");
+}
+
+
+
+/////PASIEN//////
+
 function tambahpasien($data){
 	global $conn;
 	$NIK = htmlspecialchars($data["NIK"]);
@@ -62,7 +98,7 @@ function cari($keyword){
 	OR
 	NIK LIKE'%$keyword%'
 	";
-	return quert($query)
+	return query($query);
 }
 
 
@@ -98,30 +134,28 @@ mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 }
 
-function hapuskeluhan($NIK){
+function hapuskeluhan($Idkeluhan){
 	global $conn;
-	mysqli_query($conn, "DELETE FROM tb_penyakit where NIK = $NIK");
+	mysqli_query($conn, "DELETE FROM tb_penyakit where Idkeluhan = $Idkeluhan");
 	return mysqli_affected_rows($conn);
 }
 
 function ubahdatakeluhan($data){
 	global $conn;
 	$Idkeluhan = $data["Idkeluhan"];
-	$NIK = htmlspecialchars($data["NIK"]);
-    $Nama = htmlspecialchars($data["Nama"]);
-    $Alamat = htmlspecialchars($data["Alamat"]);
-	$Kelamin = htmlspecialchars($data["Kelamin"]);
-	$Usia = htmlspecialchars($data["Usia"]);
-    $Golongandarah = htmlspecialchars($data["Golongandarah"]);
+	$NIK = ($data["NIK"]);
+    $Tekanandarah = htmlspecialchars($data["Tekanandarah"]);
+    $beratbadan = htmlspecialchars($data["beratbadan"]);
+	$suhutubuh = htmlspecialchars($data["suhutubuh"]);
+	$keluhan = htmlspecialchars($data["keluhan"]);
     
 
-	$query = "UPDATE tb_pasien SET 
-	NIK = '$NIK',
-	Nama ='$Nama',
-	Alamat = '$Alamat',
-	Kelamin ='$Kelamin',
-	Usia = '$Usia'
-	Where IDpasien = $IDpasien
+	$query = "UPDATE tb_penyakit SET 
+	Tekanandarah ='$Tekanandarah',
+	beratbadan = '$beratbadan',
+	suhutubuh ='$suhutubuh',
+	keluhan = '$keluhan'
+	Where Idkeluhan = $Idkeluhan
 	";
 mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);

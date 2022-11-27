@@ -1,4 +1,10 @@
 <?php
+
+if(isset ($_SESSION["login"]) ){
+    header("location: login.php");
+    exit;
+}
+
 require 'function.php';
 $NIK = $_GET["NIK"];
 $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
@@ -26,6 +32,8 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
     <th>Diagnosis</th>
     <th>Obat</th>
     <th>Tekanan darah</th>
+    <th>berat badan</th>
+    <th>suhu tubuh</th>
 
 </tr>
 <?php $i= 1; ?>
@@ -38,10 +46,12 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
     </td>
     <td><?= $row["jam"]; ?> | <?= $row["tanggal"]; ?></td>
     <td><?= $row["Idkeluhan"]; ?> </td>
-    <td><?= $row["keluhan"]; ?></td>
+    <td><a href="diagnosis.php?Idkeluhan= <?=$row["Idkeluhan"]?>"><?= $row["keluhan"]; ?></a></td>
     <td><?= $row["diagnosis"]; ?></td>
     <td><?= $row["resepobat"]; ?></td>
     <td><?= $row["TekananDarah"]; ?></td>
+    <td><?= $row["beratbadan"]; ?></td>
+    <td><?= $row["suhutubuh"]; ?></td>
 
 </tr>
 <?php $i++; ?>

@@ -1,4 +1,10 @@
 <?php
+
+if(isset ($_SESSION["login"]) ){
+    header("location: login.php");
+    exit;
+}
+
 require ('function.php');
 if( isset($_POST["submit"]) ){
     if(tambahpasien($_POST) > 0)

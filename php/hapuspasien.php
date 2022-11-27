@@ -1,4 +1,9 @@
 <?php
+if(isset ($_SESSION["login"]) ){
+    header("location: login.php");
+    exit;
+}
+
 require 'function.php';
 
 $IDpasien = $_GET["IDpasien"];

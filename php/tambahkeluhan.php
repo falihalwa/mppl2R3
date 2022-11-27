@@ -1,4 +1,10 @@
 <?php
+
+if(isset ($_SESSION["login"]) ){
+    header("location: login.php");
+    exit;
+}
+
 require ('function.php');
 if( isset($_POST["submit"]) ){
     if(tambahkeluhan($_POST) > 0)
@@ -18,6 +24,7 @@ if( isset($_POST["submit"]) ){
         ";
     }
     }
+$date = date('d-m-y h:i:s');
 
 ?>
 <!DOCTYPE html>
@@ -29,8 +36,8 @@ if( isset($_POST["submit"]) ){
     <h1> Tambah data pasien</h1>
     <form action="" method="post">
     <input type="hidden" name="NIK" value="<?= $psn["NIK"]; ?>">
-    <input type="hidden" name="jam" value="<?= $psn["jam"]; ?> ">
-    <input type="hidden" name="tanggal" value="<? $psn["tanggal"]; ?>">
+    <input type="hidden" name="jam" value="date('h:i:s')">
+    <input type="hidden" name="tanggal" value="date('d-m-y')">
         <ul>
             <li>
                 <label for="TekananDarah">Tekanan darah : </label>

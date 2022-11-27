@@ -1,4 +1,9 @@
 <?php
+
+if(isset ($_SESSION["login"]) ){
+    header("location: login.php");
+    exit;
+}
 require 'function.php';
 $pasien = query("SELECT * FROM tb_pasien");
 
@@ -16,7 +21,7 @@ if(isset($_POST["cari"]) ){
 
 </head>
 <body>
-    
+ <a href="logout.php">logout</a>   
 <h1>Daftar pasien</h1>
 <table border ="1" cellpadding="10" cellspacing="0">
 <a href="tambahpasien.php">Tambah pasien</a>
