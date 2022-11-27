@@ -1,6 +1,10 @@
 <?php
 require 'function.php';
 $pasien = query("SELECT * FROM tb_pasien");
+
+if(isset($_POST["cari"]) ){
+    $pasien = cari($_POST["keyword"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +20,14 @@ $pasien = query("SELECT * FROM tb_pasien");
 <h1>Daftar pasien</h1>
 <table border ="1" cellpadding="10" cellspacing="0">
 <a href="tambahpasien.php">Tambah pasien</a>
+<br><br>
+
+<form action="" method="post">
+
+    <input type="text" name="keyword" size="30" autofocus placeholder="Input Nama Pasien" autocomplete="off">
+    <button type="submit" name="cari"> Search</button>
+
+</form>
 <tr>
     <th>change?</th>
     <th>Nama</th>
@@ -30,11 +42,11 @@ $pasien = query("SELECT * FROM tb_pasien");
     <td>
         <a href="ubahdatapasien.php?IDpasien= <?= $row["IDpasien"] ?>" >ubah</a>|
         <a href="hapuspasien.php?IDpasien= <?= $row["IDpasien"] ?>" 
-        onclick= "return confirm('Anda yakin?);">hapus</a>
+        onclick= "return confirm('Anda yakin?');">hapus</a>
     </td>
     <td><?= $row["Nama"]; ?> </td>
     <td><?= $row["IDpasien"]; ?></td>
-    <td href="daftarpenyakit.php?NIK= <?=$row["NIK"]?>"><?= $row["NIK"]; ?></td>
+    <td><a href="daftarpenyakit.php?NIK= <?=$row["NIK"]?>"> <?= $row["NIK"]; ?></a></td>
     <td><?= $row["Kelamin"]; ?></td>
     <td><?= $row["Usia"]; ?></td>
 
@@ -43,6 +55,11 @@ $pasien = query("SELECT * FROM tb_pasien");
 <?php endforeach; ?>
 
 </table>
+        <li>
+            <a  href="tambahpasien.php">
+            <button>Tambah pasien</button>
+        </a>
+        </li>
 
 </body>
 </html>

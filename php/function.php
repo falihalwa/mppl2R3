@@ -57,6 +57,14 @@ mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 }
 
+function cari($keyword){
+	$query = "SELECT * FROM tb_pasien where Nama Like '%$keyword%' 
+	OR
+	NIK LIKE'%$keyword%'
+	";
+	return quert($query)
+}
+
 
 
 /////PENYAKIT/////
@@ -64,8 +72,8 @@ return mysqli_affected_rows($conn);
 
 function tambahkeluhan($data){
 	global $conn;
-	$NIK = htmlspecialchars($data["NIK"]);
-	$Tekanandarah = htmlspecialchars($data["Tekanandarah"]);
+	$NIK = ($data["NIK"]);
+	$TekananDarah = htmlspecialchars($data["TekananDarah"]);
     $beratbadan = htmlspecialchars($data["beratbadan"]);
     $tinggibadan = htmlspecialchars($data["tinggibadan"]);
 	$suhutubuh = htmlspecialchars($data["suhutubuh"]);
@@ -74,7 +82,18 @@ function tambahkeluhan($data){
 	$date = htmlspecialchars($data["tanggal"]);
 
 	$query = "INSERT INTO tb_penyakit
-	VALUES ('','$NIK','$tekanandarah','$beratbadan','$tinggibadan','$suhutubuh','$time','$date','','')";
+	VALUES ('','$NIK','$TekananDarah','$beratbadan','$tinggibadan','$suhutubuh','$time','$date','','')";
+mysqli_query($conn, $query);
+return mysqli_affected_rows($conn);
+}
+
+function diagnosis($data){
+	global $conn;
+	$diagnosis = htmlspecialchars($data["diagnosis"]);
+	$resepobat = htmlspecialchars($data["resepobat"]);
+
+	$query = "INSERT INTO tb_penyakit
+	VALUES ('','','','','','','','','$diagnosis','$resepobat')";
 mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 }
@@ -87,7 +106,7 @@ function hapuskeluhan($NIK){
 
 function ubahdatakeluhan($data){
 	global $conn;
-	$IDpasien = $data["IDpasien"];
+	$Idkeluhan = $data["Idkeluhan"];
 	$NIK = htmlspecialchars($data["NIK"]);
     $Nama = htmlspecialchars($data["Nama"]);
     $Alamat = htmlspecialchars($data["Alamat"]);

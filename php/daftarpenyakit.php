@@ -15,37 +15,43 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
 </head>
 <body>
     
-<h1>Daftar pasien</h1>
+<h1>Daftar Keluhan</h1>
 <table border ="1" cellpadding="10" cellspacing="0">
 
 <tr>
-
+    <th>change?</th>
     <th>watku</th>
     <th>ID</th>
     <th>Keluhan</th>
     <th>Diagnosis</th>
     <th>Obat</th>
     <th>Tekanan darah</th>
-    <th>change?</th>
+
 </tr>
 <?php $i= 1; ?>
 <?php foreach($pasien as $row )  : ?>
 <tr>
-
-    <td><?= $row["jam"]; ?> <?= $row["tanggal"]; ?></td>
+    <td>
+        <a href="ubahkeluhan.php?Idkeluhan= <?= $row["Idkeluhan"] ?>" >ubah</a>|
+        <a href="hapuskeluhan.php?Idkeluhan= <?= $row["Idkeluhan"] ?>" 
+        onclick= "return confirm('Anda yakin?');">hapus</a>
+    </td>
+    <td><?= $row["jam"]; ?> | <?= $row["tanggal"]; ?></td>
     <td><?= $row["Idkeluhan"]; ?> </td>
     <td><?= $row["keluhan"]; ?></td>
     <td><?= $row["diagnosis"]; ?></td>
     <td><?= $row["resepobat"]; ?></td>
     <td><?= $row["TekananDarah"]; ?></td>
-    <td>
-        <a href="">hapus</a>
-    </td>
+
 </tr>
 <?php $i++; ?>
 <?php endforeach; ?>
 
 </table>
-
+<li>
+            <a  href="tambahkeluhan.php">
+            <button>Tambah keluhan</button>
+        </a>
+</li>
 </body>
 </html>

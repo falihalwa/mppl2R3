@@ -31,15 +31,15 @@ if( isset($_POST["submit"]) ){
         <ul>
             <li>
                 <label for="NIK">NIK : </label>
-                <input type="Number" name="NIK" id="NIK" required>
+                <input type="Number" name="NIK" id="NIK" required autocomplete="off">
             </li>
             <li>
                 <label for="Nama">Nama : </label>
-                <input type="text" name="Nama" id="Nama" required>
+                <input type="text" name="Nama" id="Nama" required autocomplete="off">
             </li>
             <li>
                 <label for="Alamat">Alamat : </label>
-                <input type="text" name="Alamat" id="alamat" required>
+                <input type="text" name="Alamat" id="alamat" required autocomplete="off">
             </li>
             <li>
                 <label for="Kelamin">Kelamin : </label>
@@ -61,7 +61,7 @@ if( isset($_POST["submit"]) ){
             </li>
             <li>
                 <label for="Usia">Usia : </label>
-                <input type="number" name="Usia" id="Usia" required>
+                <input type="number" name="Usia" id="Usia" required autocomplete="off">
             </li>
             <li>
                 <button type="submit" name="submit">Submit</button>
@@ -69,3 +69,5 @@ if( isset($_POST["submit"]) ){
         </ul>
     
     </form>
+</body>
+</html>
