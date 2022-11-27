@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 01:23 PM
+-- Generation Time: Nov 27, 2022 at 10:57 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -32,6 +32,7 @@ CREATE TABLE `tb_pasien` (
   `NIK` double NOT NULL,
   `Nama` varchar(100) NOT NULL,
   `Alamat` varchar(250) NOT NULL,
+  `Kelamin` set('Laki-laki','Perempuan') NOT NULL,
   `Usia` int(11) NOT NULL,
   `Golongandarah` set('A','B','O','AB','-') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -40,8 +41,9 @@ CREATE TABLE `tb_pasien` (
 -- Dumping data for table `tb_pasien`
 --
 
-INSERT INTO `tb_pasien` (`IDpasien`, `NIK`, `Nama`, `Alamat`, `Usia`, `Golongandarah`) VALUES
-(1, 666666666666666, 'admin', 'admin', 22, '-');
+INSERT INTO `tb_pasien` (`IDpasien`, `NIK`, `Nama`, `Alamat`, `Kelamin`, `Usia`, `Golongandarah`) VALUES
+(1, 666666666666666, 'admin', 'admin', 'Laki-laki', 22, '-'),
+(20, 2122480039034, 'ADGH', 'LOGM!?@&gt;', 'Laki-laki', -43, 'A');
 
 -- --------------------------------------------------------
 
@@ -68,7 +70,8 @@ CREATE TABLE `tb_penyakit` (
 --
 
 INSERT INTO `tb_penyakit` (`Idkeluhan`, `NIK`, `TekananDarah`, `beratbadan`, `tinggibadan`, `suhutubuh`, `keluhan`, `jam`, `tanggal`, `diagnosis`, `resepobat`) VALUES
-(2, 666666666666666, '69/69', 420, 169, '42.0', 'MUAK', '23:59:59', '2022-11-20', 'Mabok', 'Baygon');
+(2, 666666666666666, '69/69', 420, 169, '42.0', 'MUAK', '23:59:59', '2022-11-20', 'Mabok', 'Baygon'),
+(3, 666666666666666, '420/69', 69, 88, '32.0', 'Banyak bacot', '00:00:00', '2022-12-30', 'gk bisa diam', 'Sofel');
 
 -- --------------------------------------------------------
 
@@ -125,13 +128,13 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_pasien`
 --
 ALTER TABLE `tb_pasien`
-  MODIFY `IDpasien` double NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IDpasien` double NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tb_penyakit`
 --
 ALTER TABLE `tb_penyakit`
-  MODIFY `Idkeluhan` double NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Idkeluhan` double NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
