@@ -75,7 +75,7 @@ if( isset($_POST["submit"]) ){
       <div class="mct container bg-white rounded-3" style="margin-top: 10px; margin-right: 20px; padding-top: 20px ">
         <form action="" method="post">
             <ul>
-                <h3 class="border-bottom" style="text-align: right; padding-bottom: 15px">Tambah Keluhan</h3>
+                <h3 class="border-bottom" style="text-align: right; padding-bottom: 15px">Tambah Pasien</h3>
 
                 <div class="mb-1">
                     <label for="NIK" class="form-label text-black-50 ">NIK</label>
