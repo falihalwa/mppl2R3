@@ -65,20 +65,20 @@ if( isset($_POST["submit"]) ){
      
     <!-- As a heading -->
     <nav class="navbar bg-white">
-      <div class="container-fluid d-flex justify-content-start">
+      <div class="container-fluid d-flex">
         <!-- Tulisan Kapas -->
         <span class="navbar-brand mb-0 h1" style="font-family: 'Roboto', sans-serif"> <img src="" alt="" /> Kapas</span>
         <!-- Search Bar -->
-        <form action="" method="post" class="d-flex w-50" role="search">
+        <form action="" method="post" class="d-flex" role="search" style="width: 60%">
 
             <input type="text" name="keyword" size="30" autofocus placeholder="Input Nama Pasien" autocomplete="off" class="form-control me-2 bg-light" style="border: none">
             <button type="submit" name="cari"style="border: none; padding: 5px,5px"> Search</button>
 
         </form>
         
+        <a href="logout.php">logout</a>
       </div>
     </nav>
-    <a href="logout.php">logout</a>
 
     <!-- Tombol Tambah Pasien -->
     <div class="d-flex justify-content-end" style="margin-right: 10px">

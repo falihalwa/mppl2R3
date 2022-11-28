@@ -55,7 +55,6 @@ if( isset($_POST["submit"]) ){
         <title>Ubah Data Pasien</Title>
     </head>
 <body>
-    
     <nav class="navbar bg-white">
       <div class="container-fluid d-flex justify-content-start">
         <!-- Tulisan Kapas -->
@@ -95,7 +94,7 @@ if( isset($_POST["submit"]) ){
                         <input type="text" name="Alamat" id="alamat" required autocomplete="off" value="<?= $psn["Alamat"]; ?>" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="Kelamin" class="form-label text-black-50">Kelamin</label>
+                        <label for="Kelamin" class="form-label text-black-50">Jenis Kelamin</label>
                         <select name= "Kelamin"required value="<?= $psn["Kelamin"]; ?>" class="form-select">
                             <option value="<?= $psn["Kelamin"]; ?>"><?= $psn["Kelamin"]; ?></option>
                             <option value="Laki-laki">Laki-laki</option>

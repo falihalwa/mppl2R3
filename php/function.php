@@ -87,6 +87,7 @@ function ubahdatapasien($data){
 	Nama ='$Nama',
 	Alamat = '$Alamat',
 	Kelamin ='$Kelamin',
+	Golongandarah = '$Golongandarah',
 	Usia = '$Usia'
 	WHERE IDpasien = $IDpasien
 	";
@@ -149,7 +150,7 @@ function hapuskeluhan($Idkeluhan){
 function ubahdatakeluhan($data){
 	global $conn;
 	$Idkeluhan = $data["Idkeluhan"];
-	$NIK = ($data["NIK"]);
+	// $NIK = ($data["NIK"]);
     $Tekanandarah = htmlspecialchars($data["TekananDarah"]);
     $beratbadan = htmlspecialchars($data["beratbadan"]);
 	$suhutubuh = htmlspecialchars($data["suhutubuh"]);

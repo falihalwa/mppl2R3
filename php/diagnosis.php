@@ -105,15 +105,15 @@ if( isset($_POST["submit"]) ){
                     <div style="width: 47%">
                         <div>
                             <h6 class="fw-bold">Tekanan Darah</h6>
-                            <p><?=$row["TekananDarah"]; ?></p>
+                            <p><?=$row["TekananDarah"]; ?> mmHg</p>
                         </div>
                         <div>
                             <h6 class="fw-bold">Berat Badan</h6>
-                            <p><?=$row["beratbadan"]; ?></p>
+                            <p><?=$row["beratbadan"]; ?> kg</p>
                         </div>
                         <div>
                             <h6 class="fw-bold">Suhu Tubuh</h6>
-                            <p><?=$row["suhutubuh"]; ?></p>
+                            <p><?=$row["suhutubuh"]; ?>&degC</p>
                         </div>
                     </div>
                 </div>

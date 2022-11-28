@@ -111,25 +111,25 @@ if( isset($_POST["submit"]) ){
                     <h3 class="border-bottom" style="text-align: right; padding-bottom: 15px">Ubah Data Keluhan</h3>
 
                     <div class="mb-3 text-black-50">
-                        <label for="Tekanandarah" class="form-lable">Tekanan darah</label>
-                        <input type="text" name="TekananDarah" id="TekananDarah" required autocomplete="off" class="form-control">
+                        <label for="TekananDarah" class="form-lable">Tekanan darah</label>
+                        <input type="text" name="TekananDarah" id="TekananDarah" required autocomplete="off" class="form-control" value="<?= $psn["TekananDarah"]; ?>">
                     </div>
                     <div class="mb-3 text-black-50">
                         <label for="beratbadan" class="form-lable">Berat badan</label>
-                        <input type="number" name="beratbadan" id="beratbadan" required autocomplete="off" class="form-control">
+                        <input type="number" name="beratbadan" id="beratbadan" required autocomplete="off" class="form-control" value="<?= $psn["beratbadan"]; ?>">
                     </div>
                     <div class="mb-3 text-black-50">
                         <label for="tinggibadan" class="form-lable">Tinggi badan</label>
-                        <input type="number" name="tinggibadan" id="tinggibadan" required autocomplete="off" class="form-control">
+                        <input type="number" name="tinggibadan" id="tinggibadan" required autocomplete="off" class="form-control" value="<?= $psn["tinggibadan"]; ?>">
                     </div>
                     <div class="mb-3 text-black-50">
                         <label for="suhutubuh" class="form-lable">Suhu Tubuh</label>
-                        <input type="number" name="suhutubuh" id="suhutubuh" required autocomplete="off" class="form-control">
+                        <input type="number" name="suhutubuh" id="suhutubuh" required autocomplete="off" class="form-control" value="<?= $psn["suhutubuh"]; ?>">
                     </div>
 
                     <div class="mb-3 text-black-50">
                         <label for="keluhan" class="form-lable">Keluhan</label>
-                        <input type="text" name="keluhan" id="suhutubuh" required autocomplete="off" class="form-control">
+                        <input type="text" name="keluhan" id="keluhan" required autocomplete="off" class="form-control" value="<?= $psn["keluhan"]; ?>">
                     </div>
 
                     <div class="mb-3 text-black-50">
