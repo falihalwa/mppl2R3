@@ -150,7 +150,7 @@ function ubahdatakeluhan($data){
 	global $conn;
 	$Idkeluhan = $data["Idkeluhan"];
 	$NIK = ($data["NIK"]);
-    $Tekanandarah = htmlspecialchars($data["Tekanandarah"]);
+    $Tekanandarah = htmlspecialchars($data["TekananDarah"]);
     $beratbadan = htmlspecialchars($data["beratbadan"]);
 	$suhutubuh = htmlspecialchars($data["suhutubuh"]);
 	$keluhan = htmlspecialchars($data["keluhan"]);

@@ -61,11 +61,6 @@ if( isset($_POST["submit"]) ){
     <title>halaman Daftar pasien</title>
 
 </head>
-<body>
- <a href="logout.php">logout</a>   
-<h1>Daftar pasien</h1>
-<table border ="1" cellpadding="10" cellspacing="0">
-<br><br>
 <body>   
      
     <!-- As a heading -->
@@ -75,14 +70,15 @@ if( isset($_POST["submit"]) ){
         <span class="navbar-brand mb-0 h1" style="font-family: 'Roboto', sans-serif"> <img src="" alt="" /> Kapas</span>
         <!-- Search Bar -->
         <form action="" method="post" class="d-flex w-50" role="search">
- 
+
             <input type="text" name="keyword" size="30" autofocus placeholder="Input Nama Pasien" autocomplete="off" class="form-control me-2 bg-light" style="border: none">
             <button type="submit" name="cari"style="border: none; padding: 5px,5px"> Search</button>
 
         </form>
-        <a href="logout.php">logout</a>
+        
       </div>
     </nav>
+    <a href="logout.php">logout</a>
 
     <!-- Tombol Tambah Pasien -->
     <div class="d-flex justify-content-end" style="margin-right: 10px">
@@ -95,26 +91,20 @@ if( isset($_POST["submit"]) ){
     </div>
 
     <!-- Main Section -->
-    <section class="d-flex mt-3">
-      <!-- navs&tabs -->
+    <section class="d-flex mt-3 bg-light" style="height: 85vh">
 
-      <div class="container w-25 borde">
+      <!-- navs&tabs -->
+      <div class="container w-25 bg-white rounded-end rounded-3" style="margin-right: 15px; margin-top: 10px; padding-top: 20px">
         <nav class="nav flex-column">
-          <a class="nav-link active nav-inactive border-black-50" style="margin-bottom: 25px" aria-current="page" href="tabel-kunjungan.html"> <img src="img/calendar-inactive.png" alt="" /> Kunjungan</a>
+          <a class="nav-link active nav-inactive border-black-50 disabled" style="margin-bottom: 25px" aria-current="page" href="tabel-kunjungan.html"> <img src="img/calendar-inactive.png" alt="" /> Kunjungan</a>
           <a class="nav-link border-end border-3 nav-active" href="#"> <img src="img/pasien-active.png" alt="" /> Pasien</a>
         </nav>
       </div>
 
       <!-- tabel -->
 
-      <div class="container">
-        <table border ="1" cellpadding="10" cellspacing="0" class="table table-striped">
-
-            <a href="tambahpasien.php">Tambah pasien</a>
-
-            <br><br>
-
-
+      <div class="container bg-white rounded-3" style="margin-top: 10px; margin-right: 20px; padding-top: 20px ">
+        <table class="table table-light table-responsive">
             <tr>
                 <th>change</th>
                 <th>Nama</th>
