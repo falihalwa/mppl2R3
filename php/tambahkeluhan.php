@@ -10,22 +10,25 @@ require ('function.php');
 $NIK = $_GET["NIK"];
 
 if( isset($_POST["submit"]) ){
-    // if(tambahkeluhan($_POST) > 0)
-    // {
-    //     echo"
-    //         <script> 
-    //         alert('keluhan berhasil ditambahkan');
-    //         </script>
-    //     ";
-    // }else {
-    //     echo"
-    //     <script> 
-    //         alert('keluhan gagal ditambahkan');
-    //     </script>
-    //     ";
-    // }
+    if(tambahkeluhan($_POST) > 0)
+    {
+        echo"
+            <script> 
+            alert('keluhan berhasil ditambahkan');
+            </script>
+        ";
+    }else {
+        echo"
+        <script> 
+            alert('keluhan gagal ditambahkan');
+        </script>
+        ";
+    }
     }
 $date = date('d-m-y h:i:s');
+echo $date;
+$jam = date('h:i:s');
+$tanggal = date('y-m-d');
 
 ?>
 <!DOCTYPE html>
@@ -37,9 +40,12 @@ $date = date('d-m-y h:i:s');
     <h1> Tambah data keluhan pasien</h1>
     <form action="" method="post">
     <input type="hidden" name="NIK" value="<?=$NIK; ?>">
-    <input type="hidden" name="jam" value="date('h:i:s')">
-    <input type="hidden" name="tanggal" value="date('d-m-y')">
+    <input type="hidden" name="jam" value="<?=$jam;?>">
+    <input type="hidden" name="tanggal" value="<?=$tanggal?>">
         <ul>
+        <li>
+            <td>NIK :<?=$NIK; ?></td>
+            </li>
             <li>
                 <label for="TekananDarah">Tekanan darah : </label>
                 <input type="text" name="TekananDarah" id="TekananDarah" required autocomplete="off">
@@ -69,7 +75,7 @@ $date = date('d-m-y h:i:s');
     </form> 
     <form action="daftarpenyakit.php">
         <input type="hidden" name="NIK" value="<?=$NIK?>" />
-        <input type="submit" value="AREP TOLOL MEMEK KONTOL">
+        <input type="submit" value="daftar keluhan">
     </form>
     </body>
 </html>

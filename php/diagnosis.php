@@ -48,8 +48,8 @@ if( isset($_POST["submit"]) ){
 <?php foreach($pasien as $row )  : ?>
 <tr>
     <td>
-        <a href="ubahkeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" >ubah</a>|
-        <a href="hapuskeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" 
+        <a href="ubahdatakeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" >ubah</a>|
+        <a href="hapusdatakeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" 
         onclick= "return confirm('Anda yakin?');">hapus</a>
     </td>
     <td><?= $row["jam"]; ?> | <?= $row["tanggal"]; ?></td>
@@ -63,10 +63,13 @@ if( isset($_POST["submit"]) ){
 <?php $i++; ?>
 <?php endforeach; ?>
 </table>
+
     <h1> Tambah Diagnosis keluhan</h1>
     <form action="" method="post">
-    <input type="hidden" name="IDkeluhan" value="<?= $psn["IDkeluhan"]; ?>">
         <ul>
+            <li>
+                <input type="hidden" name="Idkeluhan" value="<?=$Idkeluhan?>">
+            </li>
             <li>
                 <label for="diagnosis">Diagnosis : </label>
                 <input type="text" name="diagnosis" id="diagnosis" required autocomplete="off">

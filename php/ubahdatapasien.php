@@ -39,9 +39,7 @@ if( isset($_POST["submit"]) ){
 <body>
     <h1> Tambah data pasien</h1>
     <form action="" method="post">
-    <body>
-    <h1> Tambah data pasien</h1>
-    <form action="" method="post">
+    <input type="hidden" name="IDpasien" value="<?=$IDpasien; ?>">
         <ul>
             <li>
                 <label for="NIK">NIK : </label>
@@ -81,7 +79,6 @@ if( isset($_POST["submit"]) ){
                 <button type="submit" name="submit">Submit</button>
             </li>
         </ul>
-    
     </form>
 </body>
 </html>

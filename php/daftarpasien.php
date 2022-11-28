@@ -24,7 +24,6 @@ if(isset($_POST["cari"]) ){
  <a href="logout.php">logout</a>   
 <h1>Daftar pasien</h1>
 <table border ="1" cellpadding="10" cellspacing="0">
-<a href="tambahpasien.php">Tambah pasien</a>
 <br><br>
 
 <form action="" method="post">

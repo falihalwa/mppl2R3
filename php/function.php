@@ -88,7 +88,7 @@ function ubahdatapasien($data){
 	Alamat = '$Alamat',
 	Kelamin ='$Kelamin',
 	Usia = '$Usia'
-	Where IDpasien = $IDpasien
+	WHERE IDpasien = $IDpasien
 	";
 mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
@@ -126,11 +126,16 @@ return mysqli_affected_rows($conn);
 
 function diagnosis($data){
 	global $conn;
+	$Idkeluhan = $data["Idkeluhan"];
 	$diagnosis = htmlspecialchars($data["diagnosis"]);
 	$resepobat = htmlspecialchars($data["resepobat"]);
 
-	$query = "INSERT INTO tb_penyakit
-	VALUES ('','','','','','','','','','$diagnosis','$resepobat')";
+	$query = " UPDATE tb_penyakit SET
+	diagnosis ='$diagnosis',
+	resepobat = '$resepobat'
+	Where Idkeluhan = '$Idkeluhan'
+	";
+
 mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 }

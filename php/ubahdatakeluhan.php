@@ -17,14 +17,12 @@ if( isset($_POST["submit"]) ){
         echo"
             <script> 
             alert('Keluhan berhasil diubah');
-            document.location.href = 'daftarKeluhan.php';
             </script>
         ";
     }else {
         echo"
         <script> 
             alert('Keluhan gagal diubah');
-            document.location.href = 'daftarkeluhan.php';
         </script>
         ";
     }
@@ -56,12 +54,16 @@ if( isset($_POST["submit"]) ){
 
             <li>
                 <label for="keluhan">Keluhan : </label>
-                <input type="text" name="keluhan" id="suhutubuh" required autocomplete="off">
+                <input type="text" name="keluhan" id="keluhan" required autocomplete="off">
             </li>
             <li>
                 <button type="submit" name="submit">Submit</button>
             </li>
         </ul>
+    </form>
+    <form action="daftarpenyakit.php">
+        <input type="hidden" name="NIK" value="<?=$psn["NIK"];?>" />
+        <input type="submit" value="daftar keluhan">
     </form>
 </body>
 </html>

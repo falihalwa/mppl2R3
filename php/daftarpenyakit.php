@@ -20,10 +20,9 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
 
 </head>
 <body>
-        <input type="hidden" name="NIK" value="<?= $psn["NIK"]; ?>">
 <h1>Daftar Keluhan</h1>
 <table border ="1" cellpadding="10" cellspacing="0">
-<input type="hidden" name="NIK" value="<?= $psn["NIK"]; ?>">
+<input type="hidden" name="NIK" value="<?=["NIK"]; ?>">
 <tr>
     <th>change?</th>
     <th>watku</th>
@@ -40,8 +39,8 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
 <?php foreach($pasien as $row )  : ?>
 <tr>
     <td>
-        <a href="ubahkeluhan.php?Idkeluhan= <?= $row["Idkeluhan"] ?>" >ubah</a>|
-        <a href="hapuskeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" 
+        <a href="ubahdatakeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" >ubah</a>|
+        <a href="hapusdatakeluhan.php?Idkeluhan=<?= $row["Idkeluhan"] ?>" 
         onclick= "return confirm('Anda yakin?');">hapus</a>
     </td>
     <td><?= $row["jam"]; ?> | <?= $row["tanggal"]; ?></td>
@@ -56,12 +55,10 @@ $pasien = query("SELECT * FROM tb_penyakit where NIK = $NIK");
 </tr>
 <?php $i++; ?>
 <?php endforeach; ?>
+<form action="tambahkeluhan.php">
+        <input type="hidden" name="NIK" value="<?=$NIK?>" />
+        <input type="submit" value="tambah keluhan">
+</form>
 
-</table>
-        <li>
-            <a  href="tambahkeluhan.php?NIK=<?=$row["NIK"] ?>">
-            <button>tambah keluhan</button>
-        </a>
-</li>
 </body>
 </html>
