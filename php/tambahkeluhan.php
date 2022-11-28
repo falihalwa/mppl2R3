@@ -77,5 +77,6 @@ $tanggal = date('y-m-d');
         <input type="hidden" name="NIK" value="<?=$NIK?>" />
         <input type="submit" value="daftar keluhan">
     </form>
+    <a href="daftarpenyakit.php">pindah</a>
     </body>
 </html>
