@@ -16,7 +16,7 @@ Pengembangan sistem ini bertujuan untuk bisa menyederhanakan proses bisnis yang 
 
 ## User story
 
-
+??????
 
 ## Cakupan
 
@@ -66,15 +66,25 @@ Daftar dari fitur yang tidak akan dikembangkan
 
 ## Risiko
 
+????
+
 ## Metodologi
 
 **ini gatau udh bener gini apa blm coba cek lagi ya bang**
 Pengembangan perangkat lunak dengan metode waterfall akan diselesaikan secara sekuensial. Dimulai dari mendesain perangkat lunak yang akan dikembangkan lalu dilanjutkan dengan membangun atau mengimplementasikan desain, dan melakukan testing pada tahap akhir pengembangan. Alur pengembangan model waterfall mengikuti aliran air. Artinya, dalam proses pengembangan perangkat lunak, untuk masuk fase berikutnya, fase sebelumnya sudah ditesting, direview, dan diverifikasi secara menyeluruh.
 
 ## Use case
-![Prefork](etc/5/prefork.png)
+
+????
+
 ## Activity Diagram
+
+![Activity](etc/Activity.png)
+
 ## Class Diagram/ERD
+
+![Class](etc/Class.png)
+
 ## Link video demo
 ## Link sheet test case (dah ada hasil testingnya)
 ## Link deploy (kalo apk link drive)
