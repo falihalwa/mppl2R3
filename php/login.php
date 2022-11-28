@@ -27,37 +27,86 @@ if(isset($_POST["login"]) ){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Bootsrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="style/style.css" />
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
     <title>Halaman Login</title>
-    <style>
-        label {display: block;}
-    </style>
+
+    
 </head>
 <body>
-    <h1> Halaman Login </h1>
-    <?php if(isset($error) ) : ?>
-        <p style="color: red; font-style: ">username / pasword salah</p>
-    <?php endif; ?>
-    <form action="" method="post">
-        <ul>
-            <li>
-                <label for="username">username : </label>
-                <input type="text" name="username" id="username">
-            </li>
-            <li>
-                <label for="password">password : </label>
-                <input type="password" name="password" id="password">
-            </li>
-            <li>
-                <button type="submit" name="login">login</button> 
-            </li>
-    </ul>        
-</form>
-    <form action="register.php">
-    <input type="submit" value = "register">
-</form>
+    
+<!-- Top Section -->
+    <nav class="navbar font" style="height: 25vh; background: rgba(200, 207, 218, 0.2)">
+      <div class="container-fluid">
+        <span class="kapas-text navbar-text"> Kapas </span>
+      </div>
+    </nav>
+    <!-- Main Section -->
+    <section class="login d-flex" style="height: 75vh">
+      <!-- left splitted page -->
+      <div class="login-left w-50 h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-10" style="margin-top: 100px">
+            <h2>Kapas Profile</h2>
+            <p>Kapas adalah blablabla</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- right splitted page -->
+      <div class="login-right w-50 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <!-- login form -->
+          <div class="col-8 border rounded p-5">
+            <div class="header">
+              <h1>Login</h1>
+            </div>
+
+            <!-- form login -->
+            <div class="login-form">
+                
+                <form action="" method="post">
+                    <!-- input username -->
+                    <div>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="username">
+                    </div>
+                    <!-- input password -->
+                    <div>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="password">
+                    </div>
+                    <!-- tombol login -->
+                    <div>
+                        <button  class="signin bg-primary" style="border: none" type="submit" name="login">login</button> 
+                    </div>
+                </form>
+                <?php if(isset($error) ) : ?>
+                    <p style="color: red; font-style: ">username / pasword salah</p>
+                <?php endif; ?>
+                
+                <form action="register.php">
+                    <input type="submit" value = "register">
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 </body>
 </html>
