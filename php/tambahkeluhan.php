@@ -71,6 +71,5 @@ $date = date('d-m-y h:i:s');
         <input type="hidden" name="NIK" value="<?=$NIK?>" />
         <input type="submit" value="AREP TOLOL MEMEK KONTOL">
     </form>
-    <a href="daftarpenyakit.php">pindah</a>
     </body>
 </html>
