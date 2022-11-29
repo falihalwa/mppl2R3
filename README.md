@@ -52,11 +52,10 @@ Daftar dari fitur yang tidak akan dikembangkan
 #### Front End Development :
 - Bootstrap
 - CSS
-- Javascript
-
+- PHP
 #### Back End Development :
 - PHP
-- SQL
+- MySQL
 
 #### System Documentation:
 - Trello
