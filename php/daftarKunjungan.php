@@ -64,7 +64,7 @@ $pasien = query("SELECT * FROM tb_penyakit where tanggal = '$tanggal'");
             <!-- tabel -->
             <div class="container bg-white rounded-3" style="margin-top: 10px; margin-right: 20px; padding-top: 20px ">
                 <div class="d-flex justify-content-end border-bottom mb-3">
-                    <h1 class="mb-3 mt-3">Kunjungan Hari ini</h1>
+                    <h1 class="mb-3 mt-3">Kunjungan Hari Ini</h1>
                 </div>
                 <table class="table table-light table-responsive">
                 
