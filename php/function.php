@@ -1,6 +1,6 @@
 <?php
 //koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "db_kapas.sql");
+$conn = mysqli_connect("localhost", "root", "", "db_kapas");
 
 function query($query){
 	global $conn;
