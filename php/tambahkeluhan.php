@@ -66,7 +66,7 @@ $tanggal = date('y-m-d');
         <!-- navs&tabs -->
         <div class="container w-25 bg-white rounded-end rounded-3" style="margin-right: 15px; margin-top: 10px; padding-top: 20px">
             <nav class="nav flex-column">
-                <a class="nav-link active nav-inactive border-black-50" style="margin-bottom: 25px" aria-current="page" href="tabel-kunjungan.html"> <img src="img/calendar-inactive.png" alt="" /> Kunjungan</a>
+                <a class="nav-link active nav-inactive border-black-50" style="margin-bottom: 25px" aria-current="page" href="daftarKunjungan.php"> <img src="img/calendar-inactive.png" alt="" /> Kunjungan</a>
                 <a class="nav-link border-end border-3 nav-active" href="daftarpasien.php">
                     <img src="img/pasien-active.png" alt="" />
                     Pasien

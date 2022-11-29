@@ -70,7 +70,7 @@ if( isset($_POST["submit"]) ){
             <!-- navs&tabs -->
             <div class="container w-25 bg-white rounded-end rounded-3" style="margin-right: 15px; margin-top: 10px; padding-top: 20px">
                 <nav class="nav flex-column">
-                    <a class="nav-link active nav-active border-black-50" style="margin-bottom: 25px" aria-current="page" href="tabel-kunjungan.html"> <img src="img/calendar-active.png" alt="" /> Kunjungan</a>
+                    <a class="nav-link active nav-active border-black-50" style="margin-bottom: 25px" aria-current="page" href="daftarKunjungan.php"> <img src="img/calendar-active.png" alt="" /> Kunjungan</a>
                     <a class="nav-link border-end border-3 nav-inactive" href="daftarpasien.php"> <img src="img/pasien-inactive.png" alt="" /> Pasien</a>
                 </nav>
             </div>
@@ -126,12 +126,12 @@ if( isset($_POST["submit"]) ){
 
                         <div class="mb-3">
                             <label for="diagnosis" class="form-label">Diagnosa</label>
-                            <textarea type="text" name="diagnosis" id="diagnosis" required autocomplete="off" class="form-control" rows="3"></textarea>
+                            <textarea type="text" name="diagnosis" id="diagnosis" required autocomplete="off" class="form-control" rows="3"><?=$row["diagnosis"];?></textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="resepobat" class="form-label">Resep Obat</label>
-                            <textarea type="text" name="resepobat" id="resepobat" required autocomplete="off" class="form-control" rows="3"></textarea>
+                            <textarea type="text" name="resepobat" id="resepobat" required autocomplete="off" class="form-control" rows="3"><?=$row["resepobat"];?></textarea>
                         </div>
 
                         <div>
