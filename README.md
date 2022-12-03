@@ -83,7 +83,7 @@ Pengembangan perangkat lunak dengan metode waterfall akan diselesaikan secara se
 
 ## Use case
 
-![Usecase]
+![Usecase](etc/Usecase.png)
 
 ## Activity Diagram
 
