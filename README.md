@@ -16,7 +16,14 @@ Pengembangan sistem ini bertujuan untuk bisa menyederhanakan proses bisnis yang 
 
 ## User story
 
-??????
+Sebagai seorang administrator :
+- Saya ingin merekam data pasien untuk memudahkan pihak dokter dan pasien di pertemuan berikutnya
+- Saya ingin mampu mengirim data pasien ke dokter untuk mempertajam diagnosa pasien.
+
+Sebagai seorang dokter ; 
+- Saya ingin memiliki rekam pasien untuk memudahkan tracking pasien.
+- Saya ingin memasukkan hasil diagnosa pasien ke sistem komputer untuk mempercepat pertukaran data dengan pihak lain
+
 
 ## Cakupan
 
@@ -39,7 +46,8 @@ Daftar dari fitur yang tidak akan dikembangkan
 ## Kebutuhan sistem (user, fitur utama, lingkungan pengembangan)
 
 ### User
-???
+- Dokter membutuhkan informasi yang terkait dengan pasien.
+- Administrator perlu mengatur data yang masuk ke dalam sistem.
 
 ### Fitur Utama
 - Menambahkan pasien baru
@@ -65,16 +73,17 @@ Daftar dari fitur yang tidak akan dikembangkan
 
 ## Risiko
 
-????
+- MVP tidak tercapai -> tinggi
+- Bug tidak dapat ditangani oleh developer -> sedang
+- Kemampuan developer tidak mencukupi -> tinggi
 
 ## Metodologi
 
-**ini gatau udh bener gini apa blm coba cek lagi ya bang**
 Pengembangan perangkat lunak dengan metode waterfall akan diselesaikan secara sekuensial. Dimulai dari mendesain perangkat lunak yang akan dikembangkan lalu dilanjutkan dengan membangun atau mengimplementasikan desain, dan melakukan testing pada tahap akhir pengembangan. Alur pengembangan model waterfall mengikuti aliran air. Artinya, dalam proses pengembangan perangkat lunak, untuk masuk fase berikutnya, fase sebelumnya sudah ditesting, direview, dan diverifikasi secara menyeluruh.
 
 ## Use case
 
-????
+![Usecase]
 
 ## Activity Diagram
 
@@ -84,8 +93,14 @@ Pengembangan perangkat lunak dengan metode waterfall akan diselesaikan secara se
 
 ![Class](etc/Class.png)
 
-## Link video demo
-## Link sheet test case (dah ada hasil testingnya)
-## Link deploy (kalo apk link drive)
-## Link figma
+## Link
+[Link video demo](https://drive.google.com/drive/folders/1GAPuFOvn6Wjugytd8LABMmLq82QDjKDX?usp=share_link) <br/>
+[Link sheet test case (dah ada hasil testingnya)](https://anoobis-kapas.000webhostapp.com/php/daftarpasien.php)<br/>
+[Link deploy](https://docs.google.com/spreadsheets/d/1J7BkLg7A3XSX2DrU4G5BsvvZCjiKf8tUGV1sVV9iXRs/edit?usp=sharing)<br/>
+[Link figma](https://www.figma.com/file/WxLedMq24xgNE2lO3vurvg/Anoobies-team-library?node-id=0%3A1&t=7uqUWAgs82mRpDuV-1)
 ## Kendala
+- Manajemen waktu yang masih belum optimal
+- Kurangnya proaktifitas ketika menghadapi masalah
+- Deploy terkendala sehingga memperlambat penyelesaian
+- Komunikasi banyak tersendat
+- Motivasi yang kurang memadai
